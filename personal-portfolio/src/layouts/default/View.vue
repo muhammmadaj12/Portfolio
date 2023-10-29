@@ -1,0 +1,128 @@
+<template>
+  <v-app :class="{ 'dark-mode': !darkMode }" :style="computedAppStyle" id="inspire">
+    <div id="header">
+    <div class="header pb-5">
+      <div class="left-section">
+        <h2><a href="#">Abdullah <span style="color: orangered;">.</span></a></h2>
+      </div>
+      <div :class="centerSectionClass">
+          <a href="#home">Home</a>
+          <a href="#about" @click="scrollToAbout">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div :class="rightSectionClass">
+          <v-switch v-model="darkMode" hide-details inset :color="switchColor"></v-switch>
+        </div>
+    </div>
+  </div>
+   
+      <router-view />
+  </v-app>
+</template>
+
+<script setup>
+import { ref, computed } from 'vue';
+
+const darkMode = ref(true);
+const centerSectionClass = computed(() => ({
+  'center-section': true,
+  'd-none': isDesktop,
+}));
+const rightSectionClass = computed(() => ({
+  'right-section': true,
+  'd-none': isDesktop,
+}));
+
+const isDesktop = window.innerWidth >= 768;
+
+const computedAppStyle = computed(() => {
+  return {
+    backgroundColor: darkMode.value ? '#E6E6E6' : '#000',
+  };
+});
+
+const scrollToAbout = () => {
+  const aboutSection = document.getElementById('about');
+  if (aboutSection) {
+    aboutSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+const computedHeaderStyle = computed(() => {
+  return {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '10px',
+    backgroundColor: darkMode.value ? '#E6E6E6' : '#000',
+  };
+});
+
+const computedMainStyle = computed(() => {
+  return {
+    backgroundColor: darkMode.value ? '#E6E6E6' : '#000',
+    color: darkMode.value ? 'black' : 'white',
+    height: '100vh',
+  };
+});
+
+const switchColor = computed(() => {
+  return darkMode.value ? 'orange darken-3' : 'white';
+});
+const toggleSections = () => {
+  isDesktop.value = !isDesktop.value;
+};
+</script>
+
+<style>
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* This is optional, it ensures that the header is displayed on top of other content */
+  }
+.logo {
+  max-height: 40px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: white;
+}
+
+.dark-mode .header {
+  color: white;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+.left-section h2 a{
+  text-decoration: none;
+  color: black;
+  font-family: 'Saira Stencil One', sans-serif !important;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.right-section {
+  display: flex;
+  align-items: center;
+}
+
+.center-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.dark-mode .left-section h2 a {
+  color: white;
+}
+</style>
