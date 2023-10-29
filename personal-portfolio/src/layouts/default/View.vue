@@ -5,14 +5,14 @@
       <div class="left-section">
         <h2><a href="#">Abdullah <span style="color: orangered;">.</span></a></h2>
       </div>
-      <div :class="centerSectionClass">
+      <div class="centerSectionClass">
           <a href="#home">Home</a>
           <a href="#about" @click="scrollToAbout">About</a>
           <a href="#skills">Skills</a>
           <a href="#portfolio">Portfolio</a>
           <a href="#contact">Contact</a>
         </div>
-        <div :class="rightSectionClass">
+        <div class="rightSectionClass">
           <v-switch v-model="darkMode" hide-details inset :color="switchColor"></v-switch>
         </div>
     </div>
@@ -26,16 +26,6 @@
 import { ref, computed } from 'vue';
 
 const darkMode = ref(true);
-const centerSectionClass = computed(() => ({
-  'center-section': true,
-  'd-none': isDesktop,
-}));
-const rightSectionClass = computed(() => ({
-  'right-section': true,
-  'd-none': isDesktop,
-}));
-
-const isDesktop = window.innerWidth >= 768;
 
 const computedAppStyle = computed(() => {
   return {
@@ -71,9 +61,7 @@ const computedMainStyle = computed(() => {
 const switchColor = computed(() => {
   return darkMode.value ? 'orange darken-3' : 'white';
 });
-const toggleSections = () => {
-  isDesktop.value = !isDesktop.value;
-};
+
 </script>
 
 <style>

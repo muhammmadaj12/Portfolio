@@ -36,7 +36,7 @@
 
   
 <script>
-import splashImage from "@/assets/splash.png";
+import splashImage from "@/assets/splash1.png";
 import heroImage from "@/assets/hero-img.png";
 
 export default {
