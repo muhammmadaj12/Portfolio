@@ -6,11 +6,15 @@
         <h2><a href="#">Abdullah <span style="color: orangered;">.</span></a></h2>
       </div>
       <div class="centerSectionClass">
-          <a href="#home">Home</a>
-          <a href="#about" @click="scrollToAbout">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#contact">Contact</a>
+          <div> <a href="#home">Home . </a> </div>
+          <div> <a href="#about" @click="scrollToAbout">About .</a> </div>
+          <div>  <a href="#skills" @click="scrollToSkills">Skills .</a> </div>
+          <div> <a href="#portfolio"  @click="scrollToPortfolio">Portfolio .</a> </div>
+          <div> <a href="#contact" @click="scrollToContact">Contact .</a> </div>
+          <!-- <a href="#about" @click="scrollToAbout">About .</a>
+          <a href="#skills" @click="scrollToSkills">Skills .</a>
+          <a href="#portfolio"  @click="scrollToPortfolio">Portfolio .</a>
+          <a href="#contact" @click="scrollToContact">Contact .</a> -->
         </div>
         <div class="rightSectionClass">
           <v-switch v-model="darkMode" hide-details inset :color="switchColor"></v-switch>
@@ -40,6 +44,27 @@ const scrollToAbout = () => {
   }
 };
 
+const scrollToPortfolio = () => {
+  const portfolioSection = document.getElementById('portfolio');
+  if (portfolioSection) {
+    portfolioSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+const scrollToSkills = () => {
+  const skillsSection = document.getElementById('skills');
+  if (skillsSection) {
+    skillsSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+const scrollToContact = () => {
+  const contactSection = document.getElementById('contact');
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
 const computedHeaderStyle = computed(() => {
   return {
     display: 'flex',
@@ -65,12 +90,16 @@ const switchColor = computed(() => {
 </script>
 
 <style>
-#header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* This is optional, it ensures that the header is displayed on top of other content */
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  position: sticky;  /* Make the header sticky */
+  top: 0;            /* Stick it to the top of the viewport */
+  z-index: 1000; /* This is optional, it ensures that the header is displayed on top of other content */
+}
 .logo {
   max-height: 40px;
 }
@@ -87,6 +116,7 @@ const switchColor = computed(() => {
 }
 
 .left-section {
+  flex-basis: 11%;
   display: flex;
   align-items: center;
 }
@@ -108,6 +138,20 @@ const switchColor = computed(() => {
   flex: 1;
   display: flex;
   justify-content: center;
+}
+
+.centerSectionClass {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.centerSectionClass a{
+  flex-basis: 40%;
+  text-decoration: none;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;  
 }
 
 .dark-mode .left-section h2 a {

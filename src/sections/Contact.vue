@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <v-container v-if="showComponent" class="fade-container">
+    <v-container id="contact" v-if="showComponent" class="fade-container">
    <div class="contact__text">
      <div class="text-box-inline">
        <span class="subtitle" style="top: 5px; opacity: 1; visibility: inherit">contact</span>
@@ -163,4 +163,7 @@ export default {
   opacity: 0;
 }
 
+.contact__info{
+  background-color: transparent !important;
+}
 </style>

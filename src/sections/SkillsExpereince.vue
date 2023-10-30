@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container id="skills">
     <div style="padding: 6% 5%">
             <v-row>
                 <v-col col="12" lg="6" md="12" sm="12" class="section-content">
