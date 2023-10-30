@@ -56,6 +56,7 @@
 </template>
   
 <script>
+import pdfFile from '@/assets/files/MuhammadAbdullahButt.pdf';
 export default {
     name: 'AboutComponent',
     data() {
@@ -81,7 +82,7 @@ export default {
         },
         async downloadCV() {
             console.log('Download CV clicked');
-            const response = await fetch('@/assets/files/MuhammadAbdullahButt.pdf');
+            const response = await fetch(pdfFile);
             const blob = await response.blob();
             const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
