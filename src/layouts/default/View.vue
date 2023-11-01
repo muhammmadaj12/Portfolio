@@ -1,28 +1,36 @@
 <template>
   <v-app :class="{ 'dark-mode': !darkMode }" :style="computedAppStyle" id="inspire">
-    <div id="header">
-    <div class="header pb-5">
-      <div class="left-section">
-        <h2><a href="#">Abdullah <span style="color: orangered;">.</span></a></h2>
-      </div>
-      <div class="centerSectionClass">
-          <div> <a href="#home">Home . </a> </div>
-          <div> <a href="#about" @click="scrollToAbout">About .</a> </div>
-          <div>  <a href="#skills" @click="scrollToSkills">Skills .</a> </div>
-          <div> <a href="#portfolio"  @click="scrollToPortfolio">Portfolio .</a> </div>
-          <div> <a href="#contact" @click="scrollToContact">Contact .</a> </div>
-          <!-- <a href="#about" @click="scrollToAbout">About .</a>
-          <a href="#skills" @click="scrollToSkills">Skills .</a>
-          <a href="#portfolio"  @click="scrollToPortfolio">Portfolio .</a>
-          <a href="#contact" @click="scrollToContact">Contact .</a> -->
+    <v-container>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="left-section">
+          <h2><a href="#">Abdullah <span style="color: orangered;">.</span></a></h2>
         </div>
-        <div class="rightSectionClass">
-          <v-switch v-model="darkMode" hide-details inset :color="switchColor"></v-switch>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="center-section d-md-flex justify-content-md-center">
+            <a href="#home">Home .</a>
+
+            <a href="#about" @click="scrollToAbout">About .</a>
+
+            <a href="#skills" @click="scrollToSkills">Skills .</a>
+
+            <a href="#portfolio" @click="scrollToPortfolio">Portfolio .</a>
+
+            <a href="#contact" @click="scrollToContact">Contact .</a>
+
+          </div>
+          <div class="right-section">
+            <v-switch v-model="darkMode" hide-details inset :color="switchColor"></v-switch>
+          </div>
         </div>
-    </div>
-  </div>
-   
-      <router-view />
+      </nav>
+
+    </v-container>
+
+    <router-view />
   </v-app>
 </template>
 
@@ -96,13 +104,18 @@ const switchColor = computed(() => {
   align-items: center;
   padding: 10px;
   color: white;
-  position: sticky;  /* Make the header sticky */
-  top: 0;            /* Stick it to the top of the viewport */
-  z-index: 1000; /* This is optional, it ensures that the header is displayed on top of other content */
+  position: sticky;
+  /* Make the header sticky */
+  top: 0;
+  /* Stick it to the top of the viewport */
+  z-index: 1000;
+  /* This is optional, it ensures that the header is displayed on top of other content */
 }
+
 .logo {
   max-height: 40px;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -115,13 +128,8 @@ const switchColor = computed(() => {
   color: white;
 }
 
-.left-section {
-  flex-basis: 11%;
-  display: flex;
-  align-items: center;
-}
 
-.left-section h2 a{
+.left-section h2 a {
   text-decoration: none;
   color: black;
   font-family: 'Saira Stencil One', sans-serif !important;
@@ -129,10 +137,10 @@ const switchColor = computed(() => {
   font-size: 30px;
 }
 
-.right-section {
+/* .right-section {
   display: flex;
   align-items: center;
-}
+} */
 
 .center-section {
   flex: 1;
@@ -140,18 +148,12 @@ const switchColor = computed(() => {
   justify-content: center;
 }
 
-.centerSectionClass {
-    flex-basis: 40%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.centerSectionClass a{
-  flex-basis: 40%;
+.center-section a {
   text-decoration: none;
   color: #000;
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;  
+  font-size: 18px;
+  margin-right: 41px;
 }
 
 .dark-mode .left-section h2 a {

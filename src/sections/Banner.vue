@@ -26,7 +26,8 @@
                     <br />
                     Creative Products
                 </h2>
-                <v-btn class="hero__text__btn w-btn w-btn--s2 w-btn--outline-light" variant="outlined"
+                <v-btn class="hero__text__btn w-btn w-btn--s2 w-btn--outline-light" variant="outlined" href="#contact" 
+                @click="scrollToContact"
                     :color="darkMode ? 'orange' : 'white'">
                     Get In Touch
                 </v-btn>
@@ -39,7 +40,7 @@
             <!-- Code for the hero image -->
             <div class="hero__imgWrapper" id="imgWrapper">
                 <div class="hero__imgLayer">
-                    <img :src="heroImage" alt="profile" class="hero__imgLayer__img" />
+                    <!-- <img :src="heroImage" alt="profile" class="hero__imgLayer__img" /> -->
                 </div>
             </div>
         </v-row>
@@ -84,22 +85,36 @@ export default {
 };
 </script>
 
+<script setup>
+const scrollToContact = () => {
+  const contactSection = document.getElementById('contact');
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+</script>
+
 <style scoped>
 #banner {
     background-color: transparent !important;
 }
 
+.hero__text__title{
+    color: #fff;
+    font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+}
+
 .hero__imgLayer {
     position: absolute;
-    top: 0;
+    top: 39px;
     left: -4%;
     width: 100%;
     height: 95%;
-    background-image: url('@/assets/splash1.png');
+    background-image: url(/src/assets/splash1.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 50%;
-    overflow: hidden !important;
+    background-size: 60%;
 }
 
 .hero__imgLayer__img {

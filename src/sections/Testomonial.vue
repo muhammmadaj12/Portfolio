@@ -111,8 +111,8 @@
   }
   
   .circle {
-    width: 75px;
-    height: 75px;
+    width: 65px;
+    height: 65px;
     border-radius: 50%;
     background-color: #ffffff;
     display: flex;
@@ -134,7 +134,7 @@
     min-width: 226px;
     text-align: center;
     width: 71%;
-    height: 296px;
+    height: 364px;
     background-color: #ffffff;
     border-radius: 5px;
     border-top: 5px solid #d2652d;
