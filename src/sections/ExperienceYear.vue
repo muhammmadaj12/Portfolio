@@ -1,20 +1,8 @@
 <template style="background-color: wheat;">
    <v-container>
     <v-row>
-        <v-col cols="12" lg="6" md="6" sm="12">
+        <v-col class="order-lg-0 order-md-1 order-sm-1" cols="12" lg="6" md="12" sm="12">
             <div style="position: relative;">
-                <div class="experience__timePath">
-                    <span class="line"
-                        style="opacity: 1; visibility: inherit; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);"></span>
-                    <span class="semicircle"
-                        style="opacity: 1; visibility: inherit; clip-path: polygon(0% 0%, 100% 0%, 100% 89%, 0% 89%, 0% 85%, 99% 85%, 99% 14%, 0% 14%);"></span>
-                    <span class="line"
-                        style="opacity: 1; visibility: inherit; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);"></span>
-                    <span class="semicircle"
-                        style="opacity: 1; visibility: inherit; clip-path: polygon(100% 0%, 0% 0%, 0% 100%, 100% 100%, 100% 91%, 1% 91%, 1% 14%, 100% 14%);"></span>
-                    <span class="line"
-                        style="opacity: 1; visibility: inherit; clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);"></span>
-                </div>
 
                 <div style="padding: 5% 2%;">
                    <div class="card-width">
@@ -40,20 +28,17 @@
                 </div>
             </div>
         </v-col>
-        <v-col cols="12" lg="6" md="6" sm="12">
+        <v-col class="order-lg-1 order-md-0 order-sm-0" cols="12" lg="6" md="12" sm="12">
             <div style="padding: 6% 0;" class="text-box-inline">
                 <span id="skills-tools" class="text-capitalize">experience</span>
                 <h2
                     style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                    12+ Years of Experience
-                    <br>
-                    With Many Awards!
+                    1+ Year of Experience
                 </h2>
                 <p
                     style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1; visibility: inherit;">
-                    I have been developing sites and apps for 12 years and i know for sure the main trends and directions of
-                    modern design, I have been a visionary and a reliable software engineering partner for world-class
-                    brands. You will get a decent result as you expect.</p>
+                    I have been developing sites and apps for 1 year and i know for sure the main trends and directions of
+                    modern design, I have been a visionary and a reliable front-end developer. You will get a decent result as you expect.</p>
             </div>
         </v-col>
 
@@ -105,12 +90,7 @@ export default {
 }
 
 #skills-tools {
-    position: absolute;
-    left: -9%;
-    top: 20%;
-    transform: rotate(269deg);
     text-transform: uppercase;
-    z-index: 2;
 }
 
 .custom-timeline-item {

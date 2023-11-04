@@ -1,54 +1,53 @@
 <template>
-  <v-container id="skills">
-    <div style="padding: 6% 5%">
-            <v-row>
-                <v-col col="12" lg="6" md="12" sm="12" class="section-content">
-                    <!-- skills text -->
-                    <div class="skills__text">
-                        <div class="text-box-inline">
-                            <div id="skills-tools">
-                                <span class="subtitle">my skills</span>
-                            </div>
-                            <h2>
-                                What My Programming
-                                <br />
-                                Skills Included?
-                            </h2>
-                            <p>
-                                I develop simple, intuitive and responsive user interface that helps users get things done
-                                with less effort and time with those technologies.
-                            </p>
-                            <!-- switcher button -->
-                            <v-switch v-model="isSwitchOn" hide-details color="orange-darken-3" inset
-                                :label="switchLabel" />
-                        </div>
-                    </div>
-                </v-col>
-                <v-col col="12" lg="6" md="12" sm="12">
-                    <v-row v-if="isSwitchOn">
-                        <v-col cols="2" v-for="(icon, index) in skillsIcons" :key="index">
-                            <div class="card-container" @click="showImage(index)" style="position: relative;">
-                                <v-card id="skill-card" class="mx-auto" width="81" height="85">
-                                    <v-img id="skill-img" :src="icon.image" height=""></v-img>
-                                </v-card>
-                                <span class="custom-tooltip">{{ icon.tooltip.text }}</span>
-                            </div>
-                        </v-col>
-                    </v-row>
-                    <v-row v-else>
-                        <v-col cols="2" v-for="(icon, index) in toolsIcons" :key="index">
-                            <div class="card-container" @click="showImage(index)" style="position: relative;">
-                                <v-card id="skill-card" class="mx-auto" width="81" height="85">
-                                    <v-img :src="icon.image" height="60"></v-img>
-                                </v-card>
-                            </div>
-                        </v-col>
-                    </v-row>
-                </v-col>
-            </v-row>
-    </div>
-  </v-container>
-</template>
+    <v-container id="skills">
+      <v-row>
+        <v-col cols="12" md="6" class="section-content">
+          <!-- skills text -->
+          <div class="skills__text">
+            <div class="text-box-inline">
+              <div id="skills-tools">
+                <span class="subtitle">my skills</span>
+              </div>
+              <h2>
+                What My Programming
+                <br />
+                Skills Included?
+              </h2>
+              <p>
+                I develop simple, intuitive and responsive user interface that helps users get things done
+                with less effort and time with those technologies.
+              </p>
+              <!-- switcher button -->
+              <v-switch v-model="isSwitchOn" hide-details color="orange-darken-3" inset
+                :label="switchLabel" />
+            </div>
+          </div>
+        </v-col>
+        <v-col cols="12" md="6">
+          <v-row v-if="isSwitchOn">
+            <v-col lg="2" md="3" sm="4" v-for="(icon, index) in skillsIcons" :key="index">
+              <div class="card-container" @click="showImage(index)" style="position: relative;">
+                <v-card id="skill-card" class="mx-auto" width="81" height="85">
+                  <v-img id="skill-img" :src="icon.image" height=""></v-img>
+                </v-card>
+                <span class="custom-tooltip">{{ icon.tooltip.text }}</span>
+              </div>
+            </v-col>
+          </v-row>
+          <v-row v-else>
+            <v-col lg="2" md="3" sm="4" v-for="(icon, index) in toolsIcons" :key="index">
+              <div class="card-container" @click="showImage(index)" style="position: relative;">
+                <v-card id="skill-card" class="mx-auto" width="81" height="85">
+                  <v-img id="skill-img" :src="icon.image"></v-img>
+                </v-card>
+              </div>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
+  </template>
+  
 
 <script>
 // All Images related Skills 
@@ -189,12 +188,7 @@ div#skill-img {
 }
 
 #skills-tools {
-    position: absolute;
-    left: -9%;
-    top: 20%;
-    transform: rotate(269deg);
-    text-transform: uppercase;
-    z-index: 2;
+  text-transform: uppercase;
 }
 
 .custom-switch {
@@ -230,5 +224,15 @@ div#skill-img {
     background-color: transparent;
     border-radius: 18px;
     transition: left 0.3s;
+}
+
+
+.dark-mode .skills__text {
+    color: white; /* Text color for the 'Skills' section when dark mode is turned off */
+}
+
+
+.dark-mode .card-container {
+    background-color: #3f51b5 !important; /* Brighter background color for the cards in dark mode */
 }
 </style>

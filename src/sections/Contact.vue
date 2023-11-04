@@ -78,10 +78,10 @@ export default {
        },
      ],
      socialLinks: [
-       { link: "https://www.google.com/", icon: "mdi-facebook" },
-       { link: "#", icon: "mdi-twitter" },
-       { link: "#", icon: "mdi-linkedin" },
-       { link: "#", icon: "mdi-youtube" },
+       { link: "https://www.facebook.com/profile.php?id=100010575342962", icon: "mdi-facebook" },
+       { link: "https://twitter.com/buttgreat543", icon: "mdi-twitter" },
+       { link: "https://www.linkedin.com/in/muhammadabdullah-butt-9579591b6", icon: "mdi-linkedin" },
+       { link: "https://github.com/muhammmadaj12", icon: "mdi-github" },
      ],
      showComponent: false,
    };
@@ -112,6 +112,10 @@ export default {
 </script>
 
 <style scoped>
+.subtitle{
+  text-transform: uppercase;
+}
+
 #socails {
  text-decoration: none !important;
 }
@@ -165,5 +169,20 @@ export default {
 
 .contact__info{
   background-color: transparent !important;
+}
+
+.dark-mode #contact .contact__text {
+  color: white; /* Background color for the contact text section in dark mode */
+}
+
+.dark-mode #contact .contact__info .v-list-item__title,
+.dark-mode #contact v-icon,
+.dark-mode #contact v-list-item, 
+.dark-mode #contact v-list-item-content {
+  color: white !important; /* Text color for v-list items and v-icon in dark mode */
+}
+
+.dark-mode #contact .social-bg {
+  background-color: blue; /* Background color for the social icon background in dark mode */
 }
 </style>

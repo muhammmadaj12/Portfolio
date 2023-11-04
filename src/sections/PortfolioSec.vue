@@ -1,8 +1,9 @@
 <template>
   <v-container id="portfolio">
     <v-list id="portfolio-list" class="overflow-hidden">
-      <div class="d-flex justify-space-between">
-        <v-list-item id="content-item" style="flex-basis: 45%">
+      <v-row>
+        <v-col cols="12" lg="6" md="12" sm="12">
+          <v-list-item id="content-item">
           <v-list-item-content>
             <span
               class="subtitle"
@@ -48,7 +49,9 @@
             </v-tabs>
           </v-list-item-content>
         </v-list-item>
-        <v-list-item style="flex-basis: 50%">
+        </v-col>
+        <v-col cols="12" lg="6" md="12" sm="12" >
+          <v-list-item>
           <v-list-item-content>
             <v-row>
               <v-col
@@ -74,7 +77,9 @@
             </v-row>
           </v-list-item-content>
         </v-list-item>
-      </div>
+        </v-col>
+      </v-row>
+
       <v-divider class="my-3"></v-divider>
       <div class="py-3">
         <v-row>
@@ -228,6 +233,10 @@ export default {
 
 <style scoped>
 
+.subtitle{
+  text-transform: uppercase;
+}
+
 #portfolio #portfolio-list {
   background: transparent !important;
 }
@@ -325,4 +334,18 @@ export default {
 .date {
   font-size: 1em;
 }
+
+
+.dark-mode #portfolio #content-item .subtitle,
+.dark-mode #portfolio #content-item h2,
+.dark-mode #portfolio #content-item p {
+  color: #ffffff; /* Text color for the content section in dark mode */
+}
+
+
+.dark-mode #portfolio-list .v-tabs__item,
+.dark-mode #portfolio-list .v-tab {
+  color: #ffffff; /* Text color for the tabs in dark mode */
+}
+
 </style>

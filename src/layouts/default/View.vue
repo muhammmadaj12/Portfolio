@@ -1,6 +1,7 @@
 <template>
   <v-app :class="{ 'dark-mode': !darkMode }" :style="computedAppStyle" id="inspire">
-    <v-container>
+    <div style="width: 98%;">
+      <v-container>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="left-section">
           <h2><a href="#">Abdullah <span style="color: orangered;">.</span></a></h2>
@@ -29,6 +30,7 @@
       </nav>
 
     </v-container>
+    </div>
 
     <router-view />
   </v-app>
@@ -158,5 +160,8 @@ const switchColor = computed(() => {
 
 .dark-mode .left-section h2 a {
   color: white;
+}
+.dark-mode .center-section a {
+  color: white; /* Change the color to white for dark mode */
 }
 </style>

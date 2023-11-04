@@ -16,7 +16,6 @@
                     <div style="position: relative" class="about__text">
                         <div class="text-box-inline">
                             <div id="aboutt">
-                                -------
                                 <span class="subtitle" style="top: 5px; opacity: 1; visibility: inherit;">about me</span>
                             </div>
                             <h2>
@@ -25,13 +24,12 @@
                                 I can Help You!
                             </h2>
                             <p>
-                                Hi! I’m Muhammad Mabrouk, and I’m a developer who has a passion for building clean web
+                                Hi! I’m Muhammad Abdullah Butt, and I’m a developer who has a passion for building clean web
                                 applications with
                                 intuitive functionality. I enjoy the process of turning ideas into reality using creative
                                 solutions. I’m
-                                always curious about learning new skills, tools, and concepts. In addition to working on
-                                various solo
-                                full-stack projects, I have worked with creative teams, which involves daily stand-ups and
+                                always curious about learning new skills, tools, and concepts. I have worked with creative teams, 
+                                which involves daily stand-ups and
                                 communications,
                                 source control, and project management.
                             </p>
@@ -115,12 +113,7 @@ export default {
   
 <style scoped>
 #aboutt {
-    position: absolute;
-    left: -13%;
-    top: 18%;
-    transform: rotate(271deg);
     text-transform: uppercase;
-    z-index: 2;
 }
 
 #about_img {
@@ -303,5 +296,17 @@ export default {
 .hovered-outlined {
     color: white;
     border-color: black;
+}
+
+.about__text {
+  color: black; /* Default color for the text in the 'About' section */
+}
+
+.dark-mode .about__text {
+  color: white; /* Color for the text in the 'About' section when dark mode is turned off */
+}
+.dark-mode .custom-outlined-btn {
+  color: white; /* Color for the outline button text when dark mode is turned off */
+  border-color: white; /* Color for the outline button border when dark mode is turned off */
 }
 </style>

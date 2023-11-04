@@ -1,25 +1,28 @@
 <template>
-  <v-container>
+  <div style="padding: 5% 0;">
+    <v-container>
       <v-row>
         <v-col v-for="(item, index) in statsItems" :key="index">
           <v-hover v-slot:default="{ hover }">
             <v-fade-transition>
               <v-card style="padding: 6% 8%;"
                 v-if="isComponentVisible"
-                class="ma-3 position-relative"
+                class="ma-3 position-relative rounded-xl"
                 :class="{ 'elevated': hover || hoveredIndex === index }"
                 :style="{ transition: 'transform 0.3s, opacity 0.3s', transform: (hover || hoveredIndex === index) ? 'translateY(-10px)' : 'translateY(0)', opacity: isVisible[index] ? 1 : 0 }"
                 @mouseover="handleMouseOver(index)"
                 @mouseleave="handleMouseLeave(index)"
               >
-                <div class="d-flex align-center">
-                  <v-avatar size="40" :color="item.backgroundColor" class="mr-2">
+                <div class="d-flex align-center flex-wrap">
+                 <div class="ma-md-auto ma-sm-auto">
+                  <v-avatar size="60" style="font-size: 27px;" :color="item.backgroundColor" class="mr-2">
                     <v-icon dark>{{ item.icon }}</v-icon>
                   </v-avatar>
+                 </div>
                   <div>
-                    <v-card-title class="text-center">{{ item.title }}</v-card-title>
+                    <v-card-title class="text-center"> <h2> {{ item.number }} </h2> </v-card-title>
                     <v-card-text class="text-center">
-                      <h3>{{ item.number }}</h3>
+                      <h5> {{ item.title }} </h5>
                     </v-card-text>
                   </div>
                 </div>
@@ -35,6 +38,7 @@
         </v-col>
       </v-row>
     </v-container>
+  </div>
   </template>
   
   <script setup>
@@ -47,20 +51,20 @@
   const statsItems = [
     {
       icon: 'mdi-account',
-      title: 'Years of Experience',
-      number: '12+',
+      title: 'Year Experience',
+      number: '1+',
       backgroundColor: 'primary',
     },
     {
       icon: 'mdi-check',
       title: 'Completed Projects',
-      number: '230+',
+      number: '30+',
       backgroundColor: 'success',
     },
     {
       icon: 'mdi-emoticon-happy',
-      title: 'Happy Clients',
-      number: '95+',
+      title: 'My Happy Clients',
+      number: '20+',
       backgroundColor: 'info',
     },
   ];
