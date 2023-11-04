@@ -60,15 +60,15 @@ export default {
     data() {
         return {
             timelineItems: [
-                { title: 'Feb-23', icon: date1, tooltipText: "Wordpress" },
-                { title: 'Mar-23', icon: date2, tooltipText: "Psd's Converts" },
-                { title: 'April-23', icon: date3, tooltipText: "Wp-Custom Work" },
-                { title: 'May-23', icon: date4, tooltipText: "Hubspot" },
-                { title: 'June-23', icon: date5, tooltipText: "React JS" },
-                { title: 'July-23', icon: date6, tooltipText: "Shopify Stores" },
-                { title: 'Aug-23', icon: date7, tooltipText: "Start Work with VueJS" },
-                { title: 'Sept-23', icon: date8, tooltipText: "Vue JS" },
-                { title: 'Oct-23', icon: date9, tooltipText: "Vue JS" }
+                { title: 'Feb', icon: date1, tooltipText: "Wordpress" },
+                { title: 'Mar', icon: date2, tooltipText: "Psd's Converts" },
+                { title: 'April', icon: date3, tooltipText: "Wp-Custom Work" },
+                { title: 'May', icon: date4, tooltipText: "Hubspot" },
+                { title: 'June', icon: date5, tooltipText: "React JS" },
+                { title: 'July', icon: date6, tooltipText: "Shopify Stores" },
+                { title: 'Aug', icon: date7, tooltipText: "Start Work with VueJS" },
+                { title: 'Sept', icon: date8, tooltipText: "Vue JS" },
+                { title: 'Oct', icon: date9, tooltipText: "Vue JS" }
             ]
         };
     }
