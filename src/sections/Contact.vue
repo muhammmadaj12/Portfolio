@@ -10,8 +10,7 @@
          Please Drop a Message
        </h2>
        <p style="transform: none; opacity: 1; visibility: inherit">
-         Get in touch and let me know how I can help. Fill out the form and
-         I'll be in touch as soon as possible.
+         Get in touch and let me know how I can help.
        </p>
      </div>
 
@@ -63,7 +62,7 @@ export default {
      contactInfo: [
        {
          title: "Address:",
-         content: "PGECHS phase-1, near Township, Lahore",
+         content: "PGECHS phase-1, buttchowk near Township, Lahore, Pakistan",
          icon: "mdi-map-marker",
        },
        {
